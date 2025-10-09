@@ -8,6 +8,11 @@ body {
   color: $dark-color;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+}
+
 a {
   color: $primary-color;
   text-decoration: none;
