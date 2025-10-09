@@ -1,0 +1,14 @@
+@use '../../styles/variables' as *;
+
+.footer {
+  background-color: $dark-color;
+  width: 100%;
+}
+
+.logo {
+  color: white;
+}
+
+.copyright {
+  color: $secondary-color;
+}
