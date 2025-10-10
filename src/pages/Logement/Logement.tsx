@@ -1,7 +1,43 @@
 import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import type { Listing } from '../../data/Types/Listing';
+import Gallery from '../../components/Gallery/Gallery';
 
-export default function Logement() {
+function Logement() {
   const { id } = useParams();
+  const [logement, setLogement] = useState<Listing | null>(null);
+  const [error, setError] = useState(false);
+  const DATA_URL = 'http://localhost:5173/logements.json';
 
-  return <h1>logement</h1>;
+  async function fetchLogement() {
+    try {
+      const res = await fetch(DATA_URL);
+      const logements = await res.json();
+
+      const logementTrouve = logements.find(function (item: Listing) {
+        return item.id === id;
+      });
+
+      setLogement(logementTrouve);
+      setError(false);
+    } catch (error) {
+      console.error('Erreur lors du chargement des données :', error);
+      setError(true);
+    }
+  }
+
+  useEffect(
+    function () {
+      fetchLogement();
+    },
+    [id]
+  );
+
+  if (error) {
+    return <p>Erreur lors du chargement des données.</p>;
+  }
+
+  return <div>{logement && <Gallery pictures={logement.pictures} />}</div>;
 }
+
+export default Logement;
