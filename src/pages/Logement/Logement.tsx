@@ -2,6 +2,10 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import type { Listing } from '../../data/Types/Listing';
 import Gallery from '../../components/Gallery/Gallery';
+import TitleLocation from '../../components/TitleLocation/TitleLocation';
+import TagsList from '../../components/TagsList/TagsList';
+import HostInfo from '../../components/HostInfo/HostInfo';
+import RatingStars from '../../components/RatingStars/RatingStars';
 
 function Logement() {
   const { id } = useParams();
@@ -37,7 +41,15 @@ function Logement() {
     return <p>Erreur lors du chargement des données.</p>;
   }
 
-  return <div>{logement && <Gallery pictures={logement.pictures} />}</div>;
+  return (
+    <div>
+      {logement && <Gallery pictures={logement.pictures} />}
+      {logement && <TitleLocation title={logement.title} location={logement.location} />}
+      {logement && <TagsList tags={logement.tags} />}
+      {logement && <HostInfo host={logement.host} />}
+      {logement && <RatingStars rating={logement.rating} />}
+    </div>
+  );
 }
 
 export default Logement;
