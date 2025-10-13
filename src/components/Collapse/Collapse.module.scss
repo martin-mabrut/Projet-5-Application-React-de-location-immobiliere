@@ -1,0 +1,50 @@
+@use '../../styles/variables' as *;
+
+.collapse {
+  // aucune largeur fixe : réutilisable partout
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #ff6060;
+  color: #fff;
+  border: 0;
+  padding: 0.9rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  // accessibilité
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+}
+
+.title {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.icon {
+  transition: transform 0.25s ease;
+}
+
+.iconOpen {
+  transform: rotate(-180deg); // pivote quand ouvert
+}
+
+.content {
+  overflow: hidden;
+  max-height: 0; // fermé par défaut
+  transition: max-height 0.3s ease;
+}
+
+.inner {
+  padding: 1rem;
+  background: #f7f7f7;
+  border-radius: 0 0 0.5rem 0.5rem;
+}

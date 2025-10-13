@@ -6,6 +6,7 @@ import TitleLocation from '../../components/TitleLocation/TitleLocation';
 import TagsList from '../../components/TagsList/TagsList';
 import HostInfo from '../../components/HostInfo/HostInfo';
 import RatingStars from '../../components/RatingStars/RatingStars';
+import Collapse from '../../components/Collapse/Collapse';
 
 function Logement() {
   const { id } = useParams();
@@ -48,6 +49,21 @@ function Logement() {
       {logement && <TagsList tags={logement.tags} />}
       {logement && <HostInfo host={logement.host} />}
       {logement && <RatingStars rating={logement.rating} />}
+      {logement && (
+        <>
+          <Collapse title="Description">
+            <p>{logement.description}</p>
+          </Collapse>
+
+          <Collapse title="Équipements">
+            <ul>
+              {logement.equipments.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </Collapse>
+        </>
+      )}
     </div>
   );
 }
