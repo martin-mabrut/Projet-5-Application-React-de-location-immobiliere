@@ -3,22 +3,21 @@
 .host {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 0.8rem;
+  gap: 10px;
   text-align: right;
-}
 
-.name {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #ff6060;
-  max-width: 80px;
-  line-height: 1.2;
-}
+  .name {
+    font-size: 18px;
+    font-weight: 500;
+    color: $main-color;
+    max-width: 80px;
+    line-height: 143%;
+  }
 
-.picture {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  object-fit: cover;
+  .picture {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 }

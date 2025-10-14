@@ -1,6 +1,13 @@
 .page {
-  width: 1240px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  .collapseContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 80px;
+    gap: 30px;
+  }
 }

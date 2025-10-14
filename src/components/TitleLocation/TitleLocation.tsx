@@ -1,4 +1,4 @@
-import './TitleLocation.module.scss';
+import styles from './TitleLocation.module.scss';
 
 type TitleLocationProps = {
   title: string;
@@ -7,9 +7,9 @@ type TitleLocationProps = {
 
 function TitleLocation({ title, location }: TitleLocationProps) {
   return (
-    <div>
-      <h1>{title}</h1>
-      <p>{location}</p>
+    <div className={styles.titleLocation}>
+      <h1 className={styles.title}>{title}</h1>
+      <p className={styles.location}>{location}</p>
     </div>
   );
 }
