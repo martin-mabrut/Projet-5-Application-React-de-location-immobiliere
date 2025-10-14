@@ -10,15 +10,19 @@ import './styles/main.scss';
 function App() {
   return (
     <>
-      <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/logement/:id" element={<Logement />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </main>
+      <div className="page">
+        <div className="container">
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/logement/:id" element={<Logement />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
+          </main>
+        </div>
+      </div>
       <Footer />
     </>
   );

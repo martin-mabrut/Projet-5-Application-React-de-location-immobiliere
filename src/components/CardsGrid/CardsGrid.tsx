@@ -21,8 +21,18 @@ function CardsGrid() {
     })();
   }, []);
 
-  if (errorMessage) return <p>{errorMessage}</p>;
-  if (!listeLogements.length) return <p>Chargement…</p>;
+  if (errorMessage)
+    return (
+      <div className={styles.msgContainer}>
+        <p className={styles.message}>{errorMessage}</p>
+      </div>
+    );
+  if (!listeLogements.length)
+    return (
+      <div className={styles.msgContainer}>
+        <p className={styles.message}>Chargement…</p>
+      </div>
+    );
 
   return (
     <section className={styles.logements}>

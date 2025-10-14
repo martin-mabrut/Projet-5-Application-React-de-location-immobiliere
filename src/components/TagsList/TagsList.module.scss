@@ -1,0 +1,24 @@
+@use '../../styles/variables' as *;
+
+.tags {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: 20px;
+  margin-top: 0;
+
+  .tag {
+    background-color: $main-color;
+    color: $secondary-color;
+    width: auto;
+    height: 25px;
+    font-family: $font-main;
+    font-weight: 700;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

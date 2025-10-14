@@ -1,0 +1,55 @@
+@use '../../styles/variables' as *;
+
+.collapse {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 5px;
+
+  .header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $main-color;
+    color: $secondary-color;
+    border: none;
+    padding: 10px 20px 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    // accessibilité
+    &:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
+    .title {
+      font-weight: 700;
+      line-height: 143%;
+      font-size: 18px;
+      font-family: $font-main;
+    }
+
+    .icon {
+      transition: transform 0.25s ease;
+    }
+
+    .iconOpen {
+      transform: rotate(-180deg); // pivote quand ouvert
+    }
+  }
+
+  .content {
+    overflow: hidden;
+    max-height: 0; // fermé par défaut
+    transition: max-height 0.3s ease;
+
+    .inner {
+      padding: 1rem;
+      background: #ececec;
+      border-radius: 10px;
+    }
+  }
+}

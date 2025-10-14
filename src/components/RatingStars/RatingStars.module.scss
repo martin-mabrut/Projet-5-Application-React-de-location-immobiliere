@@ -1,12 +1,18 @@
+@use '../../styles/variables' as *;
+
 .rating {
   display: flex;
-  gap: 0.3rem;
-}
+  gap: 10px;
 
-.red {
-  color: #ff6060;
-}
+  i {
+    font-size: 24px;
+  }
 
-.grey {
-  color: #e3e3e3;
+  .red {
+    color: $main-color;
+  }
+
+  .grey {
+    color: #e3e3e3;
+  }
 }

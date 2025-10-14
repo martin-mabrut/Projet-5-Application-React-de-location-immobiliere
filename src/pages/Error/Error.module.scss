@@ -1,0 +1,35 @@
+@use '../../styles/variables' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  h1 {
+    font-family: $font-main;
+    color: $main-color;
+    font-size: 288px;
+    font-weight: 700;
+    line-height: 143%;
+    margin: 0;
+  }
+
+  p {
+    font-family: $font-main;
+    color: $main-color;
+    font-size: 36px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .navLink {
+    font-family: $font-main;
+    font-size: 18px;
+    line-height: 143%;
+    text-decoration: underline;
+    margin-top: 60px;
+    text-align: center;
+  }
+}

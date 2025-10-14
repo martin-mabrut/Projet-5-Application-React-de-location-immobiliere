@@ -11,7 +11,7 @@ function Banner({ title, src, alt = '' }: BannerProps) {
     <section className={styles.banner} aria-label={title}>
       <img className={styles.bg} src={src} alt={alt} />
       <div className={styles.overlay} />
-      <h1 className={styles.title}>{title}</h1>
+      {title && <h1 className={styles.title}>{title}</h1>}
     </section>
   );
 }

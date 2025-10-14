@@ -1,0 +1,26 @@
+@use '../../styles/variables' as *;
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+
+  .navList {
+    display: flex;
+    flex-direction: row;
+    gap: 57px;
+    list-style: none;
+
+    .navLink {
+      font-family: $font-main;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 143%;
+    }
+
+    .active {
+      text-decoration: underline;
+    }
+  }
+}
