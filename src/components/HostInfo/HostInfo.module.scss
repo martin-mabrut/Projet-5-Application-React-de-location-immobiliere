@@ -12,6 +12,10 @@
     color: $main-color;
     max-width: 80px;
     line-height: 143%;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
   }
 
   .picture {
@@ -19,5 +23,10 @@
     height: 64px;
     border-radius: 50%;
     object-fit: cover;
+
+    @media (max-width: 768px) {
+      width: 32px;
+      height: 32px;
+    }
   }
 }

@@ -5,12 +5,22 @@
   font-size: 40px;
   margin-top: 175px;
   margin-bottom: 250px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+  }
 }
 
 .page {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 
   .titleLocation {
     display: flex;
@@ -23,6 +33,14 @@
     align-items: flex-end;
     padding-top: 15px;
     gap: 10px;
+
+    @media (max-width: 768px) {
+      flex-direction: row-reverse;
+      flex-wrap: wrap-reverse;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0;
+    }
   }
 }
 
@@ -34,6 +52,15 @@
     flex: 1;
   }
   gap: 76px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .textCollapse {
+    font-size: 12px;
+  }
 
   ul {
     list-style-type: none;

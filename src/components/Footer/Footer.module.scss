@@ -10,6 +10,10 @@
   padding-top: 110px;
   gap: 30px;
 
+  @media (max-width: 768px) {
+    gap: 15px;
+  }
+
   .logo {
     color: $secondary-color;
     display: block;
@@ -22,5 +26,11 @@
     font-size: 24px;
     line-height: 143%;
     font-weight: 500;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+      max-width: 134px;
+      text-align: center;
+    }
   }
 }

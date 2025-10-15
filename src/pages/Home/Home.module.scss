@@ -4,4 +4,8 @@
   justify-content: center;
   gap: 43px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    gap: 22px;
+  }
 }

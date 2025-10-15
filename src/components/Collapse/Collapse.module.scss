@@ -15,9 +15,14 @@
     background-color: $main-color;
     color: $secondary-color;
     border: none;
-    padding: 10px 20px 10px 10px;
+    padding: 12px 20px 10px 10px;
     border-radius: 10px;
     cursor: pointer;
+
+    @media (max-width: 768px) {
+      height: 30px;
+      border-radius: 5px;
+    }
 
     // accessibilité
     &:focus-visible {
@@ -30,6 +35,10 @@
       line-height: 143%;
       font-size: 18px;
       font-family: $font-main;
+
+      @media (max-width: 768px) {
+        font-size: 13px;
+      }
     }
 
     .icon {

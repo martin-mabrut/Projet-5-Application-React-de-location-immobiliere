@@ -11,6 +11,10 @@
     color: $main-color;
     line-height: 143%;
     margin-bottom: 0;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
   }
 
   .location {
@@ -19,5 +23,9 @@
     font-family: $font-main;
     line-height: 143%;
     margin-top: 0;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 }
