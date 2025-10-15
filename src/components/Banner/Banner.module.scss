@@ -7,12 +7,20 @@
   height: 223px;
   width: 100%;
 
+  @media (max-width: 768px) {
+    height: 111px;
+  }
+
   .bg {
     width: 100%;
     object-fit: cover;
     display: block;
     object-position: center;
     transform: translateY(-37%);
+
+    @media (max-width: 768px) {
+      transform: translateY(-28%);
+    }
   }
 
   .overlay {
@@ -34,5 +42,14 @@
     text-align: center;
     -webkit-text-stroke: 1px black;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+      text-shadow: none;
+      -webkit-text-stroke: 0px;
+      text-align: left;
+      padding: 10px;
+      justify-content: flex-start;
+    }
   }
 }

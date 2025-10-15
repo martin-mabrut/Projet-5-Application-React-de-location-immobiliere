@@ -7,6 +7,12 @@
   align-items: center;
   width: 100%;
 
+  @media (max-width: 768px) {
+    margin-top: 50px;
+    margin-bottom: 80px;
+    gap: 60px;
+  }
+
   h1 {
     font-family: $font-main;
     color: $main-color;
@@ -14,6 +20,10 @@
     font-weight: 700;
     line-height: 143%;
     margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 96px;
+    }
   }
 
   p {
@@ -22,6 +32,10 @@
     font-size: 36px;
     font-weight: 500;
     text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
   }
 
   .navLink {
@@ -31,5 +45,10 @@
     text-decoration: underline;
     margin-top: 60px;
     text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      margin-top: 30px;
+    }
   }
 }

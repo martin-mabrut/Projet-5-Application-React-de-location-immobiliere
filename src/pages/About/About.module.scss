@@ -9,5 +9,16 @@
     flex-direction: column;
     padding: 40px 80px;
     gap: 30px;
+
+    @media (max-width: 768px) {
+      padding: 10px 0px 0px 0px;
+      gap: 10px;
+    }
+
+    p {
+      @media (max-width: 768px) {
+        font-size: 12px;
+      }
+    }
   }
 }
