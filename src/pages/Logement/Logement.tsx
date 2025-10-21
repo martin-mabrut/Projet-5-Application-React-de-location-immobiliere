@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import type { Listing } from '../../data/Types/Listing';
+import { Navigate } from 'react-router-dom';
 import Gallery from '../../components/Gallery/Gallery';
 import TitleLocation from '../../components/TitleLocation/TitleLocation';
 import TagsList from '../../components/TagsList/TagsList';
@@ -11,7 +12,7 @@ import styles from './Logement.module.scss';
 
 function Logement() {
   const { id } = useParams();
-  const [logement, setLogement] = useState<Listing | null>(null);
+  const [logement, setLogement] = useState<Listing | null | undefined>(undefined);
   const [error, setError] = useState(false);
   const DATA_URL = 'http://localhost:5173/logements.json';
 
@@ -44,37 +45,35 @@ function Logement() {
     return <p className={styles.erreur}>Erreur lors du chargement des données.</p>;
   }
 
+  if (logement === undefined) return null;
+
+  if (logement === null) return <Navigate to="*" replace />;
+
   return (
     <div>
-      {!logement ? (
-        <p className={styles.erreur}>Aucun logement trouvé.</p>
-      ) : (
-        <>
-          <Gallery pictures={logement.pictures} />
-          <div className={styles.page}>
-            <div className={styles.titleLocation}>
-              <TitleLocation title={logement.title} location={logement.location} />
-              <TagsList tags={logement.tags} />
-            </div>
-            <div className={styles.hostRating}>
-              <HostInfo host={logement.host} />
-              <RatingStars rating={logement.rating} />
-            </div>
-          </div>
-          <div className={styles.collapses}>
-            <Collapse title="Description">
-              <p className={styles.textCollapse}>{logement.description}</p>
-            </Collapse>
-            <Collapse title="Équipements">
-              <ul className={styles.textCollapse}>
-                {logement.equipments.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </Collapse>
-          </div>
-        </>
-      )}
+      <Gallery pictures={logement.pictures} />
+      <div className={styles.page}>
+        <div className={styles.titleLocation}>
+          <TitleLocation title={logement.title} location={logement.location} />
+          <TagsList tags={logement.tags} />
+        </div>
+        <div className={styles.hostRating}>
+          <HostInfo host={logement.host} />
+          <RatingStars rating={logement.rating} />
+        </div>
+      </div>
+      <div className={styles.collapses}>
+        <Collapse title="Description">
+          <p className={styles.textCollapse}>{logement.description}</p>
+        </Collapse>
+        <Collapse title="Équipements">
+          <ul className={styles.textCollapse}>
+            {logement.equipments.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </Collapse>
+      </div>
     </div>
   );
 }
