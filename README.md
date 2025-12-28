@@ -24,6 +24,6 @@ Modern and dynamic web interface, designed for smooth navigation and clear infor
 
 ## Installation
 ```bash
-git clone <REPOSITORY_URL>
-cd <PROJECT_FOLDER>
+git clone https://github.com/martin-mabrut/Projet-5-Application-React-de-location-immobiliere.git
+cd Projet-5-Application-React-de-location-immobiliere
 pnpm install
